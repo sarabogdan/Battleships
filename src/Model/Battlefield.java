@@ -104,8 +104,6 @@ public class Battlefield {
 			
 			if (ship != null && !this.detector.hasCollisionWithListOfShips(ship, this.ships) && this.validator.hasValidCoordinates(ship))
 			{
-				// TODO: remove
-				System.out.println(ship.getStartColumn() + " " + ship.getStartRow() + " " + ship.getEndColumn() + " " + ship.getEndRow());
 				this.ships.add(ship);
 				break;
 			}

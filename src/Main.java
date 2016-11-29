@@ -9,7 +9,6 @@ public class Main {
 			System.out.println("Welcome to Battleship :)");
 			bc.startGame();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

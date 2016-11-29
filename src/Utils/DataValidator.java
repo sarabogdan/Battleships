@@ -11,7 +11,15 @@ public class DataValidator {
 		{
 			return null;
 		}
-
+		
+		if (move.length() == 3)
+		{
+			if (move.charAt(2) != '0')
+			{
+				return null;
+			}
+		}
+		
 		char column = move.charAt(0);
 
 		try

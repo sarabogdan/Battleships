@@ -27,6 +27,7 @@ public class DataValidatorsTests {
 		assertEquals(dv.tryGetValidInput(null), null);
 		assertEquals(dv.tryGetValidInput("a2"), null);
 		assertEquals(dv.tryGetValidInput("AA"), null);
+		assertEquals(dv.tryGetValidInput("AA "), null);
 		assertEquals(dv.tryGetValidInput("aA5"), null);
 		assertEquals(dv.tryGetValidInput("-----"), null);
 		assertEquals(dv.tryGetValidInput("11"), null);
