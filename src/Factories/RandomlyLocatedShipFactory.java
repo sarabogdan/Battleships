@@ -6,6 +6,7 @@ import Interfaces.IRandomlyLocatedShipFactory;
 import Model.BaseShip;
 import Model.Battleship;
 import Model.Destroyer;
+import Model.Point;
 
 public class RandomlyLocatedShipFactory implements IRandomlyLocatedShipFactory {
 	private IRandomGenerator rnd;
@@ -47,12 +48,12 @@ public class RandomlyLocatedShipFactory implements IRandomlyLocatedShipFactory {
 
 		if (length == Constants.DESTROYER_LENGTH)
 		{
-			return new Destroyer(row, column, endRow, endColumn);
+			return new Destroyer(new Point(row, column), new Point(endRow, endColumn));
 		}
 
 		if (length == Constants.BATTLESHIP_LENGTH)
 		{
-			return new Battleship(row, column, endRow, endColumn);
+			return new Battleship(new Point(row, column), new Point(endRow, endColumn));
 		}
 
 		throw new Exception("This type of ship is not supported yet");

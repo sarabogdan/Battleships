@@ -12,7 +12,7 @@ public class BattleshipTest {
 	@Test
 	public void tryHitBattleshipTest() {
 
-		BaseShip ship = new Battleship(3, 'B', 3, 'F');
+		BaseShip ship = new Battleship(new Point(3, 'B'), new Point(3, 'F'));
 		CollisionDetector detector = new CollisionDetector();
 
 		assertEquals(ship.isSanked(), false);

@@ -7,10 +7,9 @@ import Utils.CollisionDetector;
 public abstract class BaseShip {
 
 	private boolean alreadySanked = false;
-	private int startRow;
-	private char startColumn;
-	private int endRow;
-	private char endColumn;
+	
+	private Point startPoint;
+	private Point endPoint;
 
 	protected ArrayList<Point> hits = new ArrayList<Point>();
 
@@ -20,12 +19,10 @@ public abstract class BaseShip {
 	 * @param endRow
 	 * @param endColumn
 	 */
-	public BaseShip(int startRow, char startColumn, int endRow, char endColumn) {
+	public BaseShip(Point startPoint, Point endPoint) {
 		super();
-		this.startRow = startRow;
-		this.startColumn = startColumn;
-		this.endRow = endRow;
-		this.endColumn = endColumn;
+		this.startPoint = startPoint;
+		this.endPoint = endPoint;
 	}
 	public abstract boolean isSanked();
 
@@ -76,28 +73,16 @@ public abstract class BaseShip {
 		return false;
 	}
 
-	public int getStartRow() {
-		return startRow;
+	public Point getStartPoint() {
+		return this.startPoint;
 	}
-	public void setStartRow(int startRow) {
-		this.startRow = startRow;
+	public void setStartPoint(Point startPoint) {
+		this.startPoint = startPoint;
 	}
-	public char getStartColumn() {
-		return startColumn;
+	public Point getEndPoint() {
+		return this.endPoint;
 	}
-	public void setStartColumn(char startColumn) {
-		this.startColumn = startColumn;
-	}
-	public int getEndRow() {
-		return endRow;
-	}
-	public void setEndRow(int endRow) {
-		this.endRow = endRow;
-	}
-	public char getEndColumn() {
-		return endColumn;
-	}
-	public void setEndColumn(char endColumn) {
-		this.endColumn = endColumn;
+	public void setEndPoint(Point endPoint) {
+		this.endPoint = endPoint;
 	}
 }

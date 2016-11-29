@@ -15,7 +15,7 @@ public class BaseShipTests {
 	@Test
 	public void tryHitBattleshipTest() {
 		
-		BaseShip ship = new Battleship(1, 'A', 1, 'E');
+		BaseShip ship = new Battleship(new Point(1, 'A'), new Point(1, 'E'));
 		CollisionDetector detector = new CollisionDetector();
 		
 		assertEquals(Constants.HitStatus.SHIPHIT, ship.tryHit(new Point(1, 'A'), detector));
@@ -34,7 +34,7 @@ public class BaseShipTests {
 	@Test
 	public void tryHitDestroyerTest() {
 		
-		BaseShip ship = new Destroyer(1, 'A', 1, 'B');
+		BaseShip ship = new Destroyer(new Point(1, 'A'), new Point(1, 'B'));
 		CollisionDetector detector = new CollisionDetector();
 		
 		assertEquals(Constants.HitStatus.SHIPHIT, ship.tryHit(new Point(1, 'A'), detector));

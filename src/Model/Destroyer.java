@@ -4,8 +4,8 @@ import Constants.Constants;
 
 public class Destroyer extends BaseShip {
 
-	public Destroyer(int startRow, char startColumn, int endRow, char endColumn) {
-		super(startRow, startColumn, endRow, endColumn);
+	public Destroyer(Point startPoint, Point endPoint) {
+		super(startPoint, endPoint);
 		// TODO Auto-generated constructor stub
 	}
 

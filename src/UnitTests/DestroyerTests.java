@@ -13,7 +13,7 @@ public class DestroyerTests {
 	@Test
 	public void tryHitBattleshipTest() {
 
-		BaseShip ship = new Destroyer(3, 'B', 3, 'C');
+		BaseShip ship = new Destroyer(new Point(3, 'B'), new Point(3, 'C'));
 		CollisionDetector detector = new CollisionDetector();
 
 		assertEquals(ship.isSanked(), false);

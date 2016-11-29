@@ -16,10 +16,10 @@ public class CollisionDetectorTests {
 	public void hasCollisionWithListOfShipsTest() {
 
 		CollisionDetector detector = new CollisionDetector();
-		BaseShip newShip = new Destroyer(1, 'A', 1, 'B');
+		BaseShip newShip = new Destroyer(new Point(1, 'A'), new Point(1, 'B'));
 		
-		BaseShip innerShip1 = new Destroyer(1, 'A', 1, 'A');
-		BaseShip innerShip2 = new Destroyer(1, 'C', 1, 'B');
+		BaseShip innerShip1 = new Destroyer(new Point(1, 'A'), new Point(1, 'A'));
+		BaseShip innerShip2 = new Destroyer(new Point(1, 'C'), new Point(1, 'B'));
 		
 		ArrayList<BaseShip> existingShips = new ArrayList<BaseShip>();
 		existingShips.add(innerShip1);
@@ -41,7 +41,7 @@ public class CollisionDetectorTests {
 		result = detector.hasCollisionWithListOfShips(null, null);
 		assertEquals(result, false);
 		
-		BaseShip innerShip3 = new Destroyer(1, 'C', 1, 'D');
+		BaseShip innerShip3 = new Destroyer(new Point(1, 'C'), new Point(1, 'D'));
 		existingShips.add(innerShip3);
 		
 		result = detector.hasCollisionWithListOfShips(null, null);
@@ -52,7 +52,7 @@ public class CollisionDetectorTests {
 	public void isPontInsideShipTest()
 	{
 		CollisionDetector detector = new CollisionDetector();
-		BaseShip newShip = new Destroyer(1, 'A', 1, 'D');
+		BaseShip newShip = new Destroyer(new Point(1, 'A'), new Point(1, 'D'));
 		Point p = new Point(1, 'B');
 		Point p1 = new Point(1, 'C');
 		Point p2 = null;

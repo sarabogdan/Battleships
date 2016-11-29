@@ -3,6 +3,7 @@ package UnitTests;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import Model.Battleship;
+import Model.Point;
 import Utils.DataValidator;
 
 public class DataValidatorsTests {
@@ -10,14 +11,14 @@ public class DataValidatorsTests {
 	@Test
 	public void testHasValidCoordinates() {
 		DataValidator dv = new  DataValidator();
-		assertEquals(dv.hasValidCoordinates(new Battleship(1 , 'A' , 2, ' ')), false);
-		assertEquals(dv.hasValidCoordinates(new Battleship(1 , '-' , 2, '#')), false);
-		assertEquals(dv.hasValidCoordinates(new Battleship(1 , 'A' , 2, 'Z')), false);
-		assertEquals(dv.hasValidCoordinates(new Battleship(1 , 'A' , 1, 'J')), true);
-		assertEquals(dv.hasValidCoordinates(new Battleship(1 , 'J' , 1, 'A')), false);
-		assertEquals(dv.hasValidCoordinates(new Battleship(1 , 'A' , 2, 'J')), true);
-		assertEquals(dv.hasValidCoordinates(new Battleship(1 , 'A' , -1, 'B')), false);
-		assertEquals(dv.hasValidCoordinates(new Battleship(1 , 'A' , 100, 'B')), false);
+		assertEquals(dv.hasValidCoordinates(new Battleship(new Point(1 , 'A') , new Point(2, ' '))), false);
+		assertEquals(dv.hasValidCoordinates(new Battleship(new Point(1 , '-') , new Point(2, '#'))), false);
+		assertEquals(dv.hasValidCoordinates(new Battleship(new Point(1 , 'A') , new Point(2, 'Z'))), false);
+		assertEquals(dv.hasValidCoordinates(new Battleship(new Point(1 , 'A') , new Point(1, 'J'))), true);
+		assertEquals(dv.hasValidCoordinates(new Battleship(new Point(1 , 'J') , new Point(1, 'A'))), false);
+		assertEquals(dv.hasValidCoordinates(new Battleship(new Point(1 , 'A') , new Point(2, 'J'))), true);
+		assertEquals(dv.hasValidCoordinates(new Battleship(new Point(1 , 'A') , new Point(-1, 'B'))), false);
+		assertEquals(dv.hasValidCoordinates(new Battleship(new Point(1 , 'A') , new Point(100, 'B'))), false);
 	}
 	
 	@Test

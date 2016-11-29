@@ -43,10 +43,10 @@ public class DataValidator {
 
 	public boolean hasValidCoordinates(BaseShip ship)
 	{
-		if (ship.getStartColumn() <= ship.getEndColumn() && ship.getStartRow() <= ship.getEndRow())
+		if (ship.getStartPoint().getColumn() <= ship.getEndPoint().getColumn() && ship.getStartPoint().getRow() <= ship.getEndPoint().getRow())
 		{
-			if (ship.getStartColumn() >= 'A' && ship.getEndColumn() >= 'A' && ship.getStartColumn() <= 'J' && ship.getEndColumn() <= 'J')
-				if (ship.getStartRow() >= 1 && ship.getEndRow() >= 1 && ship.getStartRow() <= 10 && ship.getEndRow() <= 10)
+			if (ship.getStartPoint().getColumn() >= 'A' && ship.getEndPoint().getColumn() >= 'A' && ship.getStartPoint().getColumn() <= 'J' && ship.getEndPoint().getColumn() <= 'J')
+				if (ship.getStartPoint().getRow() >= 1 && ship.getEndPoint().getRow() >= 1 && ship.getStartPoint().getRow() <= 10 && ship.getEndPoint().getRow() <= 10)
 				{
 					return true;
 				}

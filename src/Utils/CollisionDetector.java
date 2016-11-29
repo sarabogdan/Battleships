@@ -33,17 +33,17 @@ public class CollisionDetector {
 			return false;
 		}
 		
-		if (a.getStartColumn() == hit.getColumn() && a.getEndColumn() == hit.getColumn())
+		if (a.getStartPoint().getColumn() == hit.getColumn() && a.getEndPoint().getColumn() == hit.getColumn())
 		{
-			if (a.getStartRow() <= hit.getRow() && a.getEndRow() >= hit.getRow())
+			if (a.getStartPoint().getRow() <= hit.getRow() && a.getEndPoint().getRow() >= hit.getRow())
 			{
 				return true;
 			}
 		}
 		else
-			if (a.getStartRow() == hit.getRow() && a.getEndRow() == hit.getRow())
+			if (a.getStartPoint().getRow() == hit.getRow() && a.getEndPoint().getRow() == hit.getRow())
 			{
-				if (a.getStartColumn() <= hit.getColumn() && a.getEndColumn() >= hit.getColumn())
+				if (a.getStartPoint().getColumn() <= hit.getColumn() && a.getEndPoint().getColumn() >= hit.getColumn())
 				{
 					return true;
 				}
